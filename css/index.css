@@ -1,0 +1,529 @@
+/*폰트 적용*/
+@import
+url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/*노말라이즈*/
+body, ul, li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+/*라이브러리*/
+.con { 
+    margin:0 auto;
+}
+
+.img-box > img {
+    width: 100%;
+    display:block;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear:both;
+}
+
+.cell {
+    float: left;
+    box-sizing: border-box;
+}
+
+.cell-right {
+    float: right;
+    box-sizing:border-box;
+}
+
+.margin-0-auto {
+    margin:0 auto;
+}
+
+.block {
+    display:block;
+}
+
+.inline-block {
+    display:inline-block;
+}
+
+.text-align-center {
+    text-align:center;
+}
+
+.line-height-0-ch-only {
+    line-height:0;
+}
+
+.line-height-0-ch-only > * {
+    line-height:normal;
+}
+
+.relative {
+    position:relative;
+}
+
+.absolute-left {
+    position:absolute;
+    left:0;
+}
+
+.absolute-right {
+    position:absolute;
+    right:0;
+}
+
+.absolute-middle {
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+/* 고정형 레이아웃 용 */
+.con {
+    width:1180px;
+}
+
+.con-min-width {
+    min-width:1180px;
+}
+
+
+/* 커스텀 */
+.top-bar {
+    background-color:black;
+    color:white;
+}
+
+.top-bar a {
+    display: block;
+    font-size:0.77rem;
+     padding:5px 10px;
+}
+
+.top-bar a:hover {
+    color: gray;
+    
+}
+
+.top-bar a > span {
+    color: red;
+}
+
+.menu-bar {
+    position:relative;
+}
+
+.menu-bar > .menu-2 {
+    position: absolute;
+    left:0;
+    top: 50%;
+    transform:translatey(-50%);
+}
+
+.menu-bar > .menu-2 li a {
+    display: block;
+    color: lightgray;
+    font-weight: bold;
+    padding:0 7px;
+    font-size: 0.9rem;
+    position:relative;
+}
+
+.menu-bar > .menu-2 li a:hover {
+    color: black;
+}
+
+.menu-bar > .menu-2 li:not(:last-child) > a::after {
+    content:"";
+    position: absolute;
+    top:50%;
+    transform:translatey(-50%);
+    right:0;
+    width:1px;
+    height:13px;
+    background-color:lightgray;
+}
+
+.menu-bar > .menu-2 li:last-child::after {
+    content:"";
+}
+
+/* 아래 대신 line-height:0 */
+.menu-bar .logo > img {
+    display: block;
+    margin:0 auto;
+}
+
+
+
+.search-box {
+    background-color:red;
+    display:inline-block;
+}
+
+/* 메뉴바 - 검색박스 */
+
+.search-box > input {
+    border: 1px solid #dfdfdf;
+    outline:0;
+    padding: 10px;
+    padding-right:35px;
+}
+
+.search-box > input:focus {
+    border-color:black;
+}
+
+.search-box > img {
+    right:0;
+    margin-right:10px;
+}
+
+.menu-bar-2 {
+    margin-top:5px;
+    border-top: 3px solid black;
+}
+
+/* 메뉴바2에서 라인하이트 0 줬음 */
+/* 메뉴바2 안에서 메뉴1도 중앙정렬*/
+.menu-bar-2 > .menu-1 > ul > li > a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.75rem;
+}
+
+.menu-bar-2 > .menu-1 > ul > li:hover > a {
+    background-color:black;
+    color: white;
+}
+
+.menu-bar-2 ul ul {
+    display:none;
+    background-color: white;
+    
+}
+
+
+.menu-bar-2 > .menu-1 > ul >li {
+    position: relative;
+    z-index:10;
+}
+
+.menu-bar-2 > .menu-1 > ul >li > a {
+    font-weight: bold;
+}
+
+.menu-bar-2 .menu-1 li > ul{
+    position: absolute;
+    top:calc(100% + 5px);
+    border: 1px solid black;
+    
+}
+
+.menu-bar-2 .menu-1 li  li > a {
+   font-size: 0.75rem; 
+   display: block;
+    padding-left:5px;
+   
+}
+
+
+.menu-bar-2 .menu-1 li  li:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
+.menu-bar-2 .menu-1 li  li {
+    width: 150px;
+    height: 30px;
+    text-align: left;
+    line-height:30px;
+}
+
+.menu-bar-2 .menu-1 li  li:hover {
+    display: block;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.menu-bar-2 .menu-1 > ul > li:hover > ul {
+    display: block;
+}
+
+.menu-bar-2 .menu-1 li ul::before {
+    content: "";
+    width:100%;
+    height:5px;
+    position: absolute;
+    display: block;
+    bottom: 100%;
+}
+    
+        
+
+.menu-bar-2 .menu-1 > ul > li > ul::after {
+    content:"";
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    position: absolute;
+    transform: rotate(45deg);
+    top:-4px;
+    left:20px;
+    z-index:-1;
+}
+
+.top-bn-bar > .cell:not(:first-child) {
+    margin-left: 10px;
+    
+}
+
+.top-bn-bar > .cell:first-child {
+    width: 220px;
+}
+
+.top-bn-bar > .cell:nth-child(2) {
+    width: 630px;
+    background-color: gold;
+}
+
+.top-bn-bar > .cell:nth-child(3) {
+    width: 310px;
+
+}
+
+.top-bn-bar .article-list {
+    margin-top:10px;
+    border: 1px solid #e4e4e4;
+}
+
+.top-bn-bar .article-list > ul > li > a {
+    display: block;
+    font-size: 11px;
+    color: #555;
+    padding: 5px 0 5px 10px;
+}
+
+.top-bn-bar .article-list > ul > li > a::before {
+    content: "+";
+}
+
+.top-bn-bar .article-list > ul > li:hover > a {
+    color:#222;
+}
+
+.top-bn-bar .slider-1 {
+    position: relative;
+}
+    
+.top-bn-bar .slider-1 > .slides > div > div {
+    position: absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.3);
+    color:#3f3f3f;
+    font-size:12px;
+    padding:10px;
+}
+
+.top-bn-bar .slider-1 .pages {
+    position: absolute;
+    bottom: 0;
+    right:0;
+}
+
+.top-bn-bar .slider-1 .pages > ul > li {
+    width: 15px;
+    height:15px;
+    background-color:rgba(0,0,0,0.5);
+    display:inline-block;
+    border-radius:50%;
+    margin:10px 3px;
+    cursor: pointer;
+}
+
+.top-bn-bar .slider-1 > .pages > ul > li.active {
+    background-color: white;
+}
+
+.top-bn-bar .slider-1 > .slide-btns > div {
+    background-color: rgba(0,0,0,0.2);
+    position: absolute;
+    padding:20px;
+    top:50%;
+    transform:translatey(-50%);
+    left:0;
+    cursor: pointer;
+    border-radius:0 50% 50% 0;
+}
+
+.top-bn-bar .slider-1 > .slide-btns > div:last-child { 
+    left: auto;
+    right:0;
+    border-radius:50% 0 0 50%;
+}
+
+.top-bn-bar .slider-1 > .slide-btns > div:hover {
+    background-color:rgba(0,0,0,0.8);
+    color:white;
+}
+
+.top-bn-bar .slider-2  {
+    margin-top:25px;
+    padding-top:39px;
+    background-image:url(http://vivienne.kr/web/upload/goodymall40/main_right_banner02_bg.jpg);
+}
+
+.top-bn-bar .slider-2 > .side-btns > div {
+    top:0;
+    width:40%;
+    padding:7px 0;
+    cursor:pointer;
+}
+
+.top-bn-bar .slider-2 > .side-btns > div:last-child {
+    text-align:right;
+}
+
+.top-bn-bar .slider-2 .side-btns > div > span {
+    display: inline-block;
+}
+
+.top-bn-bar .slider-2 .side-btns > div:active > span {
+    transform:translateY(2px);
+}
+
+.top-bn-bar .slider-2 .slides {
+    margin-top: 15px;
+}
+
+.pro-list {
+    margin-top: 40px;
+}
+
+.top-title {
+    border-top: 4px solid black;
+}
+
+.pro-list > .title {
+    line-height:0;
+}
+
+.pro-list > .title > img {
+    width:100%;
+}
+
+.pro-list-img > .header > ul > li > a {
+    color:lightgray;
+    
+}
+
+.pro-list-img > .header > ul > li {
+    padding:30px;
+    padding-left:50px;
+    padding-right:50px;
+    position:relative;
+}
+
+.pro-list-img > .body {
+    padding-top:10px;
+}
+
+.pro-list-img > .body > ul > li {
+    display:block;
+    
+}
+
+.pro-list-img > .body .cell {
+    width:25%;
+    padding-left:15px;
+    padding-right:15px;
+    
+}
+
+
+.pro-list-img > .body .img-box {
+    border:1.5px solid rgba(0,0,0,0.1);
+}
+    
+.pro-list-img > .body .cell .prod-name, .prod-point  {
+    color:gray;
+    font-size:0.9rem;
+    letter-spacing:1px;
+}
+
+.pro-list-img > .body .cell:hover .prod-name {
+    text-decoration:underline;
+}
+
+.pro-list-img > .body .cell .prod-price::after {
+    content:"원";
+}
+
+.pro-list-img > .body .cell .prod-price {
+    font-weight:bold;
+    font-size:1.5rem;
+    color:red;
+}
+
+.pro-list-img > .body .cell .before-price {
+    font-size:0.9rem;
+    color:black;
+    text-decoration:line-through;
+}
+
+.pro-list-img .body > ul > li{
+    display:none;
+    
+}
+
+.pro-list-img .body > ul > li.active {
+    display:block;
+}
+
+
+.pro-list-img .header > ul > li.active > a {
+    color: black;
+}
+
+.pro-list-img .header > ul > li.active::before {
+    content:"";
+    background-color:white;
+    border-bottom:4px solid black;
+    height:4px;
+    width:100%;
+    position:absolute;
+    top:0;
+    transform:translatey(-100%);
+    left:0;
+    z-index:1;
+}
+
+.pro-list-img .header > ul > li.active::after {
+    content:"";
+    width:10px;
+    height:10px;
+    background-color:black;
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translatex(-50%) translatey(-50%) rotate(45deg);
+    
+}
+
+.wrap {
+    height: 500px;
+}
